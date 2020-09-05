@@ -356,15 +356,10 @@ void scheduling(gang * list_gangs, int n_gangs, proc * list_proc, int n_proc, in
             time += QUANTUM;
         }
         g++;
-        // printf("Number of active processes: %d", active_proc);
     }
 
     printf("\n\nTotal processing time: %d", time);
-
     printf("\n\n");
-    // print_list_proc(list_proc, n_proc);
-
-    // print_gangs(list_gangs, n_gangs); 
     free_memory(list_gangs, n_gangs, list_proc, n_proc);
 }
 
@@ -400,9 +395,8 @@ void enqueue(proc * list, int n) {
             current->next->p = process;
             *current->next->p = *aux;
             current->next->next = NULL;
-            // printf("Process %d queued sucessfully\n", aux->pid);
         } else {
-            aux->pid = -1; // to see which ones are finished
+            aux->pid = -1; 
         }
     }
 }
